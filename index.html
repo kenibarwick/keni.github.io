@@ -3,19 +3,53 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>keni.dj</title>
+    <title>keni.dj | DJ mixes, radio and events</title>
     <meta
       name="description"
-      content="keni.dj mixes, radio shows, and latest uploads from Mixcloud."
+      content="Listen to keni.dj mixes, radio uploads and event news, streamed from Mixcloud."
     >
-    <meta property="og:title" content="keni.dj">
+    <link rel="canonical" href="https://www.keni.dj/">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <meta property="og:title" content="keni.dj | DJ mixes, radio and events">
     <meta
       property="og:description"
-      content="Listen to the latest keni.dj uploads on Mixcloud."
+      content="Listen to keni.dj mixes, radio uploads and event news, streamed from Mixcloud."
     >
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.keni.dj/">
+    <meta property="og:site_name" content="keni.dj">
+    <meta property="og:image" content="https://www.keni.dj/favicon.svg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="keni.dj | DJ mixes, radio and events">
+    <meta
+      name="twitter:description"
+      content="Listen to keni.dj mixes, radio uploads and event news, streamed from Mixcloud."
+    >
+    <meta name="twitter:image" content="https://www.keni.dj/favicon.svg">
     <meta name="theme-color" content="#101010">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "@id": "https://www.keni.dj/#artist",
+        "name": "keni.dj",
+        "url": "https://www.keni.dj/",
+        "sameAs": [
+          "https://www.mixcloud.com/kenidj/"
+        ],
+        "description": "keni.dj shares DJ mixes, radio uploads and event news, streamed from Mixcloud."
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://www.keni.dj/#website",
+        "name": "keni.dj",
+        "url": "https://www.keni.dj/",
+        "description": "Official keni.dj website for Mixcloud uploads and event news."
+      }
+    </script>
     <script>
       !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
       posthog.init("phc_npvw5CHCHhmWwG2dvR4uSHKXZaYWVPncBDFmVAat5i5r", {
@@ -274,6 +308,26 @@
         padding: 30px 0 72px;
       }
 
+      .bio {
+        padding: 24px 0 44px;
+      }
+
+      .bio-panel {
+        display: grid;
+        grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+        gap: clamp(20px, 4vw, 42px);
+        align-items: start;
+        padding-top: 22px;
+        border-top: 1px solid var(--line);
+      }
+
+      .bio-panel p {
+        max-width: 48rem;
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(1rem, 1.7vw, 1.16rem);
+      }
+
       .section-head {
         display: flex;
         align-items: end;
@@ -365,6 +419,10 @@
         }
 
         .mix-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .bio-panel {
           grid-template-columns: 1fr;
         }
       }
@@ -480,6 +538,20 @@
           </div>
           <div class="mix-grid" id="mix-grid" aria-live="polite">
             <p class="fallback">Loading Mixcloud uploads...</p>
+          </div>
+        </section>
+
+        <section class="bio" aria-labelledby="bio-title">
+          <div class="bio-panel">
+            <div>
+              <p class="eyebrow">About</p>
+              <h2 id="bio-title">keni.dj</h2>
+            </div>
+            <p>
+              keni.dj shares DJ mixes, radio uploads and live event news through
+              Mixcloud. Follow the latest uploads here, including updates from the
+              Euphoria Weekender Malta 2026 slot.
+            </p>
           </div>
         </section>
       </main>
